@@ -1,0 +1,7 @@
+First insert the ducky while continuously keeping the little black button pressed.
+
+This puts the ducky into _dfu-mode_; we need to be in this mode to update the firmware.
+
+It's pretty simple, just execute:
+
+ program.bat newfirmware.hex 
