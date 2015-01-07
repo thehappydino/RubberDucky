@@ -1,0 +1,26 @@
+GUI r
+DELAY 1000
+string notepad.exe
+enter
+delay 500
+STRING matrix:
+enter
+STRING %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+enter
+STRING %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+enter
+STRING %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+enter
+STRING %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+enter
+STRING %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+enter
+string goto matrix
+delay 500
+GUI r
+delay 1000
+string cmd.exe
+enter
+delay 500
+string rundll32.exe powrprof.dll,SetSuspendState 0,1,0
+enter
